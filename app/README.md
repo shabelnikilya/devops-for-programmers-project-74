@@ -2,8 +2,6 @@
 
 [![Main](https://github.com/hexlet-components/js-fastify-blog/actions/workflows/main.yml/badge.svg)](https://github.com/hexlet-components/js-fastify-blog/actions/workflows/main.yml)
 
-[![Push](https://github.com/shabelnikilya/devops-for-programmers-project-74/actions/workflows/push.yml/badge.svg)](https://github.com/shabelnikilya/devops-for-programmers-project-74/actions/workflows/push.yml)
-
 ## Requirement
 
 * NodeJS v14.18.1
