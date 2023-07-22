@@ -1,14 +1,16 @@
+FILE_PATH ?= docker-compose.yml
+
 docker-app-test:
-	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+	docker-compose -f $(FILE_PATH) up --abort-on-container-exit --exit-code-from app
 
 docker-app-dev:
 	docker-compose up
 
 build-compose:
-	docker-compose build
+	docker-compose -f $(FILE_PATH) build
 
 path:
 	pwd
 
 push-image:
-	docker-compose -f docker-compose.yml push app
+	docker-compose -f $(FILE_PATH) push app
