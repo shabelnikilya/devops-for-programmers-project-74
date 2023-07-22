@@ -6,6 +6,13 @@ services:
       dockerfile: Dockerfile.production
     volumes:
       - ".:/app"
+    command: make dev
+  caddy:
+    image: caddy:2.7
+    volumes:
+      - "$PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile"
     ports:
       - "8080:8080"
-    command: make dev
+      - "443:443"
+    depends_on:
+      - app
