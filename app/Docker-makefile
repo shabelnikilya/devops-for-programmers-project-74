@@ -8,4 +8,4 @@ build-compose:
 	docker-compose build
 
 push-image:
-    docker-compose -f docker-compose.yml push app
+	docker-compose -f docker-compose.yml push app
