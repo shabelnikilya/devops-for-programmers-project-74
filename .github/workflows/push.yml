@@ -24,7 +24,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: "{{defaultContext}}:app"
+          context: "${{defaultContext}}:app"
           push: true
           tags: shabelnikilya/devops-for-programmers-project-74:latest
 #      - run: make -f "${{ env.DOCKER_MAKEFILE_PATH }}" push-image -e FILE_PATH="${{ env.DOCKER_COMPOSE_PATH }}"
