@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: copy git dir
         uses: actions/checkout@v3
+      - name: print path
+        run: make -f app/Docker-makefile path
       - name: docker build
         run: make -f app/Docker-makefile build-compose
       - name: run tests
