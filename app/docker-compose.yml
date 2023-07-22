@@ -4,4 +4,4 @@ services:
   app:
     build: .
     command: make test
-    image: shabelnikilya/devops-for-programmers-project-74:0.0.1
+    image: shabelnikilya/devops-for-programmers-project-74:latest
