@@ -4,7 +4,7 @@ on: push
 
 env:
   DOCKER_COMPOSE_PATH: "app/docker-compose.yml"
-  DOCKER_MAKEFILE_PATH: "app/Docker-makefile"
+  DOCKER_MAKEFILE_PATH: "app/Makefile"
   IMAGE_NAME: "shabelnikilya/devops-for-programmers-project-74"
 
 jobs:

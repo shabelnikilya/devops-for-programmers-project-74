@@ -5,12 +5,12 @@ services:
       context: .
       dockerfile: Dockerfile.production
     volumes:
-      - ".:/app"
+      - "./app:/app"
     command: make dev
   caddy:
     image: caddy:2.7
     volumes:
-      - "$PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile"
+      - "./app/services/caddy/Caddyfile:/etc/caddy/Caddyfile"
     ports:
       - "8080:8080"
       - "443:443"

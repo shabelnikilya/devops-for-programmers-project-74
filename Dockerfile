@@ -5,11 +5,6 @@ RUN apt-get update \
 
 WORKDIR /app
 
-COPY package.json .
-COPY package-lock.json .
-
-RUN npm ci
-
-COPY . .
+COPY app/. .
 
 CMD npm test
