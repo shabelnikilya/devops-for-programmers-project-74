@@ -1,5 +1,24 @@
-version: "3"
+version: "3.8"
 
 services:
+  db:
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+
   app:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
     image: shabelnikilya/devops-for-programmers-project-74:latest
+    environment:
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_PORT=5432
+      - DATABASE_HOST=db
+    command: bash -c 'sleep 3 && npm test'
+    depends_on:
+      - db

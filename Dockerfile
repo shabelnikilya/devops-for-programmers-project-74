@@ -1,10 +1,5 @@
-FROM node:14.19.3
-
-RUN apt-get update \
-    && apt-get install -yq make
+FROM node:14.18.1-slim
 
 WORKDIR /app
 
-COPY app/. .
-
-CMD npm test
+CMD npm start

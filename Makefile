@@ -1,11 +1,14 @@
-docker-app-test:
-	docker-compose up --abort-on-container-exit --exit-code-from app
+app-test:
+	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
-docker-app-dev:
+app-build-test:
+	docker-compose -f docker-compose.yml up --build
+
+app-prod:
 	docker-compose up
 
 build:
 	docker-compose build
 
-push-image:
+push:
 	docker-compose push app
