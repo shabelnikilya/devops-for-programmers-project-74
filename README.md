@@ -5,9 +5,13 @@ Exectuion:
 There are follow environment variables that are used by the docker compose to run the application:
 
 DATABASE_NAME - the name of the database
+
 DATABASE_USERNAME - username of the database
+
 DATABASE_PASSWORD - username passwod
+
 DATABASE_PORT - port for the db container
+
 To start the production mode just run docker compose up or make app-prod in the root directory. This will start up the Postresql DB, Caddy reverse proxy and the application itself.
 
 To start tests for this application, you can run: make app-test.
