@@ -1,4 +1,5 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/shabelnikilya/devops-for-programmers-project-74/workflows/hexlet-check/badge.svg)](https://github.com/shabelnikilya/devops-for-programmers-project-74/actions)
 
+### Application tests and push image
 [![Push status](https://github.com/shabelnikilya/devops-for-programmers-project-74/actions/workflows/push.yml/badge.svg)](https://github.com/shabelnikilya/devops-for-programmers-project-74/actions)
