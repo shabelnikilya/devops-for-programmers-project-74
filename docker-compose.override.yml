@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - "./app:/app"
-    command: bash -c 'sleep 3 && npm start'
+    command: ["bash", "-c", "sleep 3 && npm start"]
 
   caddy:
     image: caddy:2.7
