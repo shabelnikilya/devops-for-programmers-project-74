@@ -10,6 +10,12 @@ env:
 jobs:
   push-app:
     runs-on: ubuntu-latest
+
+    env:
+      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+      DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+
     steps:
       - name: copy git dir
         uses: actions/checkout@v3
@@ -31,7 +37,3 @@ jobs:
           cache-to: type=inline
           push: true
           tags: ${{ env.IMAGE_NAME }}
-        env:
-          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
-          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
-          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
