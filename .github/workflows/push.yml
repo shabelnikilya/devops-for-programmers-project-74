@@ -10,20 +10,15 @@ jobs:
   push-app:
     runs-on: ubuntu-latest
 
-    env:
-      DATABASE_NAME: ${{ env.DATABASE_NAME }}
-      DATABASE_USERNAME: ${{ env.DATABASE_USERNAME }}
-      DATABASE_PASSWORD: ${{ env.DATABASE_PASSWORD }}
-
     steps:
       - name: copy git dir
         uses: actions/checkout@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      - name: init env for database
-        run: make -f "${{ env.DOCKER_MAKEFILE_PATH }}" db-env >> $GITHUB_ENV
+#      - name: init env for database
+#        run: make -f "${{ env.DOCKER_MAKEFILE_PATH }}" db-env >> $GITHUB_ENV
       - name: run tests
-        run: make -f "${{ env.DOCKER_MAKEFILE_PATH }}" app-test
+        run: make -f "${{ env.DOCKER_MAKEFILE_PATH }}" db-env && make -f "${{ env.DOCKER_MAKEFILE_PATH }}" app-test
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
