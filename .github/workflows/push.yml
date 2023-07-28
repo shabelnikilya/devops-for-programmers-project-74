@@ -15,10 +15,10 @@ jobs:
         uses: actions/checkout@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      - name: init env for database
-        run: make -f "${{ env.DOCKER_MAKEFILE_PATH }}" db-env
+#      - name: init env for database
+#        run: make -f "${{ env.DOCKER_MAKEFILE_PATH }}" db-env
       - name: run tests
-        run: make -f "${{ env.DOCKER_MAKEFILE_PATH }}" app-test
+        run: make -f "${{ env.DOCKER_MAKEFILE_PATH }}" db-env && make -f "${{ env.DOCKER_MAKEFILE_PATH }}" app-test
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
