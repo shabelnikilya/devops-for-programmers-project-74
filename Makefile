@@ -16,7 +16,7 @@ push:
 .EXPORT_ALL_VARIABLES:
 
 db-env:
-    export DATABASE_HOST=db && \
-    export DATABASE_NAME=postgres && \
-    export DATABASE_USERNAME=postgres && \
-    export DATABASE_PASSWORD=password
+	echo "DATABASE_HOST=db\n\
+DATABASE_NAME=postgres\n\
+DATABASE_USERNAME=postgres\n\
+DATABASE_PASSWORD=password" > .env
