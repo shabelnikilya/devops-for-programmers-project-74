@@ -15,6 +15,7 @@ push:
 
 .EXPORT_ALL_VARIABLES:
 
-db-env: DATABASE_NAME=postgres1
-db-env: DATABASE_USERNAME=postgres1
-db-env: DATABASE_PASSWORD=password1
+db-env:
+	export DATABASE_NAME=postgres1
+	export DATABASE_USERNAME=postgres1
+	export DATABASE_PASSWORD=password1
