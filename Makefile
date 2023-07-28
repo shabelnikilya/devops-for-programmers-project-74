@@ -12,3 +12,9 @@ build:
 
 push:
 	docker-compose push app
+
+.EXPORT_ALL_VARIABLES:
+
+db-env: DATABASE_NAME=postgres1
+db-env: DATABASE_USERNAME=postgres1
+db-env: DATABASE_PASSWORD=password1
