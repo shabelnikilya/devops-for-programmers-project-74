@@ -1,8 +1,3 @@
-DATABASE_HOST=db
-DATABASE_NAME=postgres
-DATABASE_USERNAME=postgres
-DATABASE_PASSWORD=password
-
 app-test:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
@@ -21,7 +16,7 @@ push:
 .EXPORT_ALL_VARIABLES:
 
 db-env:
-    export DATABASE_HOST=${DATABASE_HOST} && \
-    export DATABASE_NAME=${DATABASE_NAME} && \
-    export DATABASE_USERNAME=${DATABASE_USERNAME} && \
-    export DATABASE_PASSWORD=${DATABASE_PASSWORD}
+    export DATABASE_HOST=db && \
+    export DATABASE_NAME=postgres && \
+    export DATABASE_USERNAME=postgres && \
+    export DATABASE_PASSWORD=password
