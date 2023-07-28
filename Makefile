@@ -1,10 +1,13 @@
+init:
+	cd app && make setup
+
 app-test:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 app-build-test:
 	docker-compose -f docker-compose.yml up --build
 
-app-prod:
+app-dev:
 	docker-compose up
 
 build:
